@@ -4,7 +4,7 @@ A mobile-first, just-for-fun Maverick or Goose personality quiz.
 
 ## Send it
 
-Send **index.html**. That is the entire quiz: 15 scenarios, 20-second timers,
+Send **The Top Quiz.html**. That is the entire quiz: 15 scenarios, 20-second timers,
 a synthesized final-five-second warning, mute control, and both results.
 No server, internet, account, installation, or result reporting is required.
 At least ten answered questions are needed for a result. Nothing is saved.
@@ -21,7 +21,7 @@ The embedded scoring can be inspected by anyone who opens the source.
 
 ## Development
 
-There is no application build. Edit `index.html` and reload it.
+There is no application build. Edit `The Top Quiz.html` and reload it.
 
 Node.js 20+ and Chromium are needed only for the automated tests:
 

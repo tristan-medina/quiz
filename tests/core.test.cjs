@@ -2,7 +2,7 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
-function core(){ assert.ok(fs.existsSync('index.html'),'standalone quiz exists'); const html=fs.readFileSync('index.html','utf8');const scope={};vm.runInNewContext(html.match(/<script id="quiz-core">([\s\S]*?)<\/script>/)[1],scope);return scope.QuizCore; }
+function core(){ assert.ok(fs.existsSync('The Top Quiz.html'),'standalone quiz exists'); const html=fs.readFileSync('The Top Quiz.html','utf8');const scope={};vm.runInNewContext(html.match(/<script id="quiz-core">([\s\S]*?)<\/script>/)[1],scope);return scope.QuizCore; }
 test('15 concise balanced scenarios, with three valid choices each',()=>{
  const {questions}=core();assert.equal(questions.length,15);assert.equal(questions.filter(q=>q.kind==='everyday').length,8);
  assert.equal(new Set(questions.map(q=>q.id)).size,15);let total=0;
