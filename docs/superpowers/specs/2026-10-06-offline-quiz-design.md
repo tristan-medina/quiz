@@ -47,7 +47,7 @@ Time continues when the tab is hidden. Silence warning audio while hidden; on re
 
 ## Presentation and accessibility
 
-Use an aviation-inspired dark navy interface with restrained amber and teal accents, instrument-like countdown, subtle original vector decoration, and large answer buttons. Avoid flashing effects, external film stills, and required animation. Use a responsive single-column layout on small screens.
+Mobile is the primary layout target; desktop is a responsive extension. Use an aviation-inspired dark navy interface with restrained amber and teal accents, instrument-like countdown, subtle original vector decoration, and large answer buttons. Avoid flashing effects, external film stills, and required animation. Use a single-column phone layout, minimum 48 CSS-pixel touch targets, safe-area padding, and no hover-dependent controls. Keep the timer, short prompt, and all three answers visible together at a 360 by 640 CSS-pixel viewport with default text size. On smaller heights or enlarged text, allow natural vertical scrolling without clipping content or trapping controls. Do not shrink text to force everything onscreen.
 
 Use semantic buttons, visible focus, adequate contrast, keyboard support, and comfortable touch targets. Move focus appropriately when a question or result appears. Announce question changes and the five-second warning to assistive technology without announcing every timer tick. Honor reduced-motion preferences. Sound is supplementary; all timing information remains visible. The fixed reading deadline is an intentional user requirement and may make the quiz less accessible to slower readers.
 
@@ -58,9 +58,9 @@ Use semantic buttons, visible focus, adequate contrast, keyboard support, and co
 - Exercise both results, deterministic ties, ten-answer eligibility, nine-answer retry, and exclusion of timeouts from scoring.
 - Verify real and controlled-time countdown behavior, alarm onset at five seconds, mute, timeout advancement, double-click protection, background-tab recovery, and complete cleanup on restart.
 - Verify audio failure still permits completion; manually listen to the synthesized warning when an audio-capable environment is available and report any listening limitation.
-- Check keyboard navigation, focus changes, reduced motion, and narrow-screen layout. Run a complete browser interaction test rather than relying solely on static checks.
+- Prioritize touch interaction and layout checks at 360 by 640 and 390 by 844 CSS pixels; also check 320-pixel width, landscape, enlarged text, safe-area padding, keyboard navigation, focus changes, reduced motion, and desktop layout. Run a complete browser interaction test rather than relying solely on static checks.
 - Confirm all recipient functionality lives in the single HTML file. Record any remaining browser/device validation limitations honestly.
 
 ## Scope boundaries
 
-No backend, result collection, analytics, login, downloads of external media, persistent progress, configurable question editor, or authenticity claim for the alarm. A desktop browser opening the HTML file is the primary delivery target; mobile layout is supported where the device permits opening local HTML in a browser. Attachment-opening restrictions in mail apps are outside the quiz's control.
+No backend, result collection, analytics, login, downloads of external media, persistent progress, configurable question editor, or authenticity claim for the alarm. Mobile browser use is the primary layout and interaction target, with desktop support retained. Offline operation requires opening the HTML in a browser that executes local JavaScript; some mobile mail/file preview apps do not. Validate available mobile browser emulation and distinguish it from physical-device delivery testing. Attachment-opening restrictions in mail apps are outside the quiz's control.
