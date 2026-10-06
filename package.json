@@ -1,1 +1,11 @@
-{"name":"wingman-quiz","private":true,"scripts":{"test":"node --test tests/core.test.cjs && playwright test"},"devDependencies":{"@playwright/test":"1.58.2"}}
+{
+  "name": "wingman-quiz",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/core.test.cjs && playwright test tests/site.spec.js && playwright test tests/quiz.spec.js",
+    "build": "node scripts/build-site.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2"
+  }
+}
